@@ -5,7 +5,7 @@
    
     <div class="container">
   <div class="form-box">
-  <h2>Register</h2>
+  <h1>Register</h1>
     <form method="POST" action="/register">
         {{ csrf_field() }}
         <div class="form-group">
