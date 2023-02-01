@@ -6,4 +6,4 @@
 
 ## How to run
 
-<P>just run the the docker compose file and when the porccess is done just go to http://localhost:9192/ and start testing</p>
+<P>youre gonna need docker and a wsl enviroment, then just run the the docker-compose.yml file  (with the "./vendor/bin/sail up" command) and when the process is done just go to http://localhost:9192/ and start testing. if you have any problem running it just let me know at my email: diegomolinavilladiego@gmail.com</p>
