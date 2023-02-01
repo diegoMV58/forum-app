@@ -1,7 +1,7 @@
 
 <link href="{{ asset('css/header.css') }}" rel="stylesheet">
 <header>
-  <h1>Old Cars Forum</h1>
+  <a href="home"><h1>Old Cars Forum</h1></a>
   <nav>
     <ul>
     @if( !auth()->check() )

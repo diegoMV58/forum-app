@@ -31,11 +31,12 @@ public function store(Request $request)
     if ($request->hasFile('image')) {
             $imageName = time().'.'.$request->image->extension();
             $request->image->move(public_path('img/posts'), $imageName);
-        $post->image_src = $imageName;
+        $post->image_src = 'img/posts/'.$imageName;
     }
 
     $post->save();
 
     return redirect()->to('/home');
 }
+
 }

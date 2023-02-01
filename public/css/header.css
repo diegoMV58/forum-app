@@ -9,7 +9,10 @@ header {
   position: sticky;
   top: 0;
   }
-  
+  a {
+    color: white;
+    text-decoration: none; /* no underline */
+  }
   h1 {
     font-size: 36px;
     margin: 0;

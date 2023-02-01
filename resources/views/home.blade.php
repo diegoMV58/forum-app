@@ -1,22 +1,40 @@
+@extends('layouts.master')
 
+<link href="{{ asset('css/home.css') }}" rel="stylesheet">
+@section('content')
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+<div class="container border border-dark rounded">
+  
+  <h1>Recent posts</h1>
+  <hr>
+<table class="table table-bordered table-hover table-sm table-responsive rounded-top" >
+  <thead class="thead-dark">
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($data as $item)
+    <tr>
+      
+      <td><img src="{{ asset('img/portrait.jpg')}}" class="img-thumbnail"> {{$item->username }}<br>{{ $item->created_at }}</td>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+      <td class="align-middle"><a href="#" class="alert-link text-primary">{{ $item->title }}</a></td>
+      <td class="align-middle"><a href="#">{{ $item->content }}</td>
+      <td><img src="{{ asset($item->image_src)}}" alt=""></td>
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+{{-- Pagination --}}
+        <div class="d-flex justify-content-center">
+            {!! $data->links() !!}
         </div>
-    </div>
 </div>
+
+@endsection
 

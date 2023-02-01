@@ -10,19 +10,18 @@
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    width: 40%;
   }
-  
+  h1{
+    text-align: center;
+  }
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
-  .form-group {
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  
   
   label {
     font-weight: bold;
@@ -48,4 +47,7 @@
     border: none;
     cursor: pointer;
     margin-top: 20px;
+  }
+  table{
+    width: 80%;
   }
