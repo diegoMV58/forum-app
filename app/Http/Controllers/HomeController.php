@@ -15,11 +15,20 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
 {
-    $data = DB::table('posts')->orderBy('id','desc')
-    ->paginate(10);
+    if($request->sort){
+        $data = DB::table('posts')->orderBy($request->sort,$request->dir)
+        ->paginate(10);
+
+    }else{
+        $data = DB::table('posts')->orderBy('created_at','desc')
+        ->paginate(10);
+    }
+    
+    
 
     return view('home',compact('data'));
 }
+
 }

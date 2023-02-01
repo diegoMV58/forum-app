@@ -20,7 +20,7 @@
     <form  method="GET" action="/search">
     <div class="form-group">
     <label for="query">Search by title</label>
-    <input type="text" class="form-control" id="query" name="query" placeholder="Enter title">
+    <input type="text" class="form-control" id="query" name="query" placeholder="Enter title" value="{{$query}}">
     <br>
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
@@ -33,9 +33,9 @@
   <thead class="thead-dark">
     <tr>
       <th>User</th>
-      <th>Title<a href="?sort=title&dir=asc"><span class="material-symbols-outlined">
+      <th>Title<a href="?sort=title&dir=asc&query={{$query}}"><span class="material-symbols-outlined">
       arrow_upward
-</span></a><a href="?sort=title&dir=desc"><span class="material-symbols-outlined">
+</span></a><a href="?sort=title&dir=desc&query={{$query}}"><span class="material-symbols-outlined">
       arrow_downward
 </span></a></th>
       <th>Content</th>
@@ -49,19 +49,15 @@
       <td><img src="{{ asset('img/portrait.jpg')}}" class="img-thumbnail"> {{$item->username }}<br>{{ $item->created_at }}</td>
 
       <td class="align-middle"><a href="thread?id={{$item->id}}" class="alert-link text-primary">{{ $item->title }}</a></td>
-      @if($item->image_src != 'no_image')
       <td class="align-middle"><a href="thread?id={{$item->id}}">{{ $item->content }}</td>
       <td><img src="{{ asset($item->image_src)}}" alt=""></td>
-      @else
-      <td class="align-middle" colspan="2"><a href="thread?id={{$item->id}}">{{ $item->content }}</td>
-      @endif
+
     </tr>
     @endforeach
   </tbody>
 </table>
 {{-- Pagination --}}
         <div class="d-flex justify-content-center">
-          
         {{ $data->appends($_GET)->links() }}
         </div>
         <br>

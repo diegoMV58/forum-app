@@ -9,11 +9,14 @@ table{
     text-align: center;
 
 }
-.container h1{
-    padding-top: 2%;
+span{
+    color: black;
+
 }
+
 table thead th {
     text-align: center;
+    vertical-align: middle;
 }
 nav{
     align-self: center;
@@ -24,7 +27,28 @@ nav{
 td a{
     color: black;
     vertical-align: middle;
+    text-decoration: none;
 }
 td img{
     width:200px;height:auto;
 }
+input[type="text"]{
+    font-size: 18px;
+    width: 90%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+ 
+  h1{
+    text-align: center;
+    padding-top: 2%;
+    display: flex;
+  align-items: center;
+  }
+  .create-post{
+    margin-top: 18px;
+    vertical-align: middle;
+  }

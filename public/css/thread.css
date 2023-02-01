@@ -1,0 +1,40 @@
+table{
+    width: 90%;
+    background-color: aliceblue;
+}
+.container{
+    margin-top: 1%;
+   vertical-align: top;
+    width: auto;
+    text-align: center;
+
+}
+
+
+table thead th {
+    text-align: center;
+    vertical-align: middle;
+}
+table tr td{
+    text-align: center;
+}
+.user{
+    width: 15%;
+}
+.reply{
+    width: auto;
+}
+.image{
+    width: 24%;
+}
+td img{
+    width:200px;height:auto;
+}
+img{
+    width:100%;height:auto;
+}
+
+
+  .create-post{
+    vertical-align: middle;
+  }

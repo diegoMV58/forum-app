@@ -10,7 +10,11 @@ class CreateUserController extends Controller
 {
     public function create()
     {
-        return view('create-user');
+        if (!auth()->check()) {
+            return view('create-user');
+        }else{
+            return redirect()->to('/home');
+        }
     }
     public function store()
     {

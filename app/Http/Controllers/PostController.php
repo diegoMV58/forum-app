@@ -32,6 +32,8 @@ public function store(Request $request)
             $imageName = time().'.'.$request->image->extension();
             $request->image->move(public_path('img/posts'), $imageName);
         $post->image_src = 'img/posts/'.$imageName;
+    }else{
+        $post->image_src = "no_image";
     }
 
     $post->save();
